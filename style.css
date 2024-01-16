@@ -1,13 +1,50 @@
-/*.content {*/
-/*    display: flex;*/
-/*    justify-content: center; !* Centrado horizontal *!*/
-/*    align-items: center; !* Centrado vertical *!*/
+body{
+background: linear-gradient(to right, #00BFFF, #FF4B2B);
+}
 
-/*}*/
-.content {
-    margin-top: 250px;
-    text-align: center; /* Centrado horizontal */
+.general{
+    width: 900px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+}
 
+.contenedor {
+  display: flex;
+  width: 50%;
+  margin: 50px auto;
+  
+}
+
+.Marcador{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .eleccion{
+width: 200px;
+margin: 60px 5px;
+padding: 3px;
+height: 50%;
+} */
+h4{
+    font-size: 13px;
+}
+
+.maquina{
+    margin-right: 100px;
+
+}
+
+.maquina p{
+    margin-left: 80px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.usuario{
+    margin-left: 100px;
 }
 
 img {
@@ -15,3 +52,21 @@ img {
     height: 100px;
 }
 
+button {
+    margin: 5px;
+}
+
+
+h2{
+    font-size: 15px;
+}
+
+h5{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+h4{
+    font-size: 25px;
+    font-weight: bold;
+}

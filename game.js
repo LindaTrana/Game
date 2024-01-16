@@ -1,15 +1,28 @@
-
-let btnTijeras = document.getElementById('tijeras')
-let btnPiedra = document.getElementById('piedra')
-let btnPapel = document.getElementById('papel')
-
+//SELECCION DE BOTONES
+let btnTijeras = document.getElementById('tijeras');
+let btnPiedra = document.getElementById('piedra');
+let btnPapel = document.getElementById('papel');
+//VARIABLES DE VICTORIA
+let eleccionMaquina = document.getElementById('eleccionMaquina');
+let eleccionUsuario = document.getElementById('eleccionUsuario');
+let contadorMaquina = document.getElementById('cantMaquina')
+let contadorUsuario = document.getElementById('cantUsuario')
+let resultado = document.getElementById('resultado');
+let ganador = '';
+let resultadoMaquina = '';
+let resultadoUsuario = '';
+let victoriaMaquina = 0;
+let victoriaUsuario= 0;
+//INICIALIZACIONES DE OPCIONES DEL JUEGO
 let tijeras = 'tijeras';
 let piedra = 'piedra';
 let papel = 'papel';
-let randomMaquina
-let usuario = ''
-let maquina= ''
+let usuario = '';
+let maquina= '';
 
+let randomMaquina
+
+//EVENTOS ESCUCHA DE SELECCION DE USUARIO
 btnTijeras.addEventListener('click', ()=>{
     randomMaquina = Math.floor(Math.random() * (4-1)+1)
     usuario=tijeras;
@@ -20,6 +33,7 @@ btnTijeras.addEventListener('click', ()=>{
     console.log(`Maquina: ${maquina}`)
     console.log(`Usuario: ${usuario}`)
 })
+
 btnPiedra.addEventListener('click', ()=>{
     randomMaquina = Math.floor(Math.random() * (4-1)+1)
     usuario=piedra;
@@ -29,6 +43,7 @@ btnPiedra.addEventListener('click', ()=>{
     console.log(`Maquina: ${maquina}`)
     console.log(`Usuario: ${usuario}`)
 })
+
 btnPapel.addEventListener('click', ()=>{
     randomMaquina = Math.floor(Math.random() * (4-1)+1)
     usuario=papel;
