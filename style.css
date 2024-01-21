@@ -1,5 +1,5 @@
 body{
-background: linear-gradient(to right, #00BFFF, #FF4B2B);
+background: #EECC8C;
 }
 
 .general{
@@ -8,26 +8,26 @@ background: linear-gradient(to right, #00BFFF, #FF4B2B);
     display: flex;
     flex-direction: column;
     margin: 50px auto;
+    border-radius: 10px;
+    border-color: black;
+    background: #A36361;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
 }
 
 .contenedor {
   display: flex;
   width: 50%;
   margin: 50px auto;
-  
 }
 
 .Marcador{
     display: flex;
     justify-content: space-around;
+    background: #D3A29D;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
 }
 
-/* .eleccion{
-width: 200px;
-margin: 60px 5px;
-padding: 3px;
-height: 50%;
-} */
 h4{
     font-size: 13px;
 }
@@ -56,17 +56,23 @@ button {
     margin: 5px;
 }
 
+button:hover{
+    box-shadow: 3px 3px 20px 4px rgba(216, 181, 181, 0.25), -3px -3px 20px 4px rgba(247, 163, 163, 0.22);
+}
 
 h2{
-    font-size: 15px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h5{
-    font-size: 25px;
+    font-size: 17px;
     font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h4{
-    font-size: 25px;
+    font-size: 17px;
     font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

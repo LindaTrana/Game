@@ -2,85 +2,96 @@
 let btnTijeras = document.getElementById('tijeras');
 let btnPiedra = document.getElementById('piedra');
 let btnPapel = document.getElementById('papel');
-//VARIABLES DE VICTORIA
+//VARIABLES DE VICTORIA PARA HACER MODIFICACIONES
 let eleccionMaquina = document.getElementById('eleccionMaquina');
 let eleccionUsuario = document.getElementById('eleccionUsuario');
 let contadorMaquina = document.getElementById('cantMaquina')
 let contadorUsuario = document.getElementById('cantUsuario')
 let resultado = document.getElementById('resultado');
+// INICIALIZACION DE VARIABLES DE VICTORIAS
 let ganador = '';
-let resultadoMaquina = '';
 let resultadoUsuario = '';
 let victoriaMaquina = 0;
 let victoriaUsuario= 0;
-//INICIALIZACIONES DE OPCIONES DEL JUEGO
-let tijeras = 'tijeras';
-let piedra = 'piedra';
-let papel = 'papel';
+// OPCIONES ELEGIDAS POR EL USUARIO Y MAQUINA
 let usuario = '';
 let maquina= '';
-
+// SE LE ASIGNA LA ELECCION DE LA MAQUINA GENERADO POR EL NUMERO RANDOM
 let randomMaquina
 
-//EVENTOS ESCUCHA DE SELECCION DE USUARIO
+//EVENTOS ESCUCHA DE BOTONES SELECCION DE USUARIO
 btnTijeras.addEventListener('click', ()=>{
     randomMaquina = Math.floor(Math.random() * (4-1)+1)
-    usuario=tijeras;
+    usuario="Tijeras";
 
     choiceMachine();
     choiceUser();
-
-    console.log(`Maquina: ${maquina}`)
-    console.log(`Usuario: ${usuario}`)
+    resultado.innerText = ganador;
+    eleccionMaquina.innerText = "Juego: " + maquina
+    eleccionUsuario.innerText = "Juego: " + usuario
 })
 
 btnPiedra.addEventListener('click', ()=>{
     randomMaquina = Math.floor(Math.random() * (4-1)+1)
-    usuario=piedra;
+    usuario="Piedra";
 
     choiceMachine();
     choiceUser();
-    console.log(`Maquina: ${maquina}`)
-    console.log(`Usuario: ${usuario}`)
+    resultado.innerText = ganador;
+    eleccionMaquina.innerText = "Juego: " + maquina
+    eleccionUsuario.innerText = "Juego: " + usuario
+
 })
 
 btnPapel.addEventListener('click', ()=>{
     randomMaquina = Math.floor(Math.random() * (4-1)+1)
-    usuario=papel;
+    usuario="Papel";
 
     choiceMachine();
     choiceUser();
-
-    console.log(`Maquina: ${maquina}`)
-    console.log(`Usuario: ${usuario}`)
+    resultado.innerText = ganador;
+    eleccionMaquina.innerText = "Juego: " + maquina
+    eleccionUsuario.innerText = "Juego: " + usuario
 })
 
 function choiceMachine(){
     if (randomMaquina === 1){
-        maquina = 'piedra'
+        maquina = 'Piedra'
     }else if(randomMaquina === 2){
-        maquina = 'papel'
+        maquina = 'Papel'
     }else if(randomMaquina === 3){
-        maquina = 'tijeras'
+        maquina = 'Tijeras'
     }
+}
+
+function maquinaGana(){
+    ganador = 'PERDISTE, LOOSER!!'
+    victoriaMaquina +=1;
+    contadorMaquina.innerText = "Victorias: " + victoriaMaquina
+}
+
+let UsuarioGana = () => {
+    ganador = 'GANASTE, MAQUINA!!'
+    victoriaUsuario +=1;
+    contadorUsuario.innerText = "Victorias: " + victoriaUsuario
 }
 
 function choiceUser(){
 
     if (maquina === usuario ) {
-        console.log('Empate')
-    }else if(maquina === 'tijeras' && usuario === 'piedra'){
-        console.log('GANASTE, piedra gana a tijera')
-    }else if(maquina === 'piedra' && usuario === 'tijeras'){
-        console.log('PERDISTE, piedra gana a tijera')
-    }else if(maquina === 'papel' && usuario === 'piedra'){
-        console.log('PERDISTE, papel gana a piedra')
-    }else if(maquina === 'piedra' && usuario === 'papel'){
-        console.log('GANASTE, papel gana a piedra')
-    }else if(maquina === 'tijeras' && usuario === 'papel'){
-        console.log('PERDISTE, tijera gana a papel')
-    }else if(maquina === 'papel' && usuario === 'tijeras'){
-        console.log('GANASTE, tijera gana a papel')
+        ganador = 'EMPATE'
+    }else if(maquina === 'Tijeras' && usuario === 'Piedra'){
+        UsuarioGana()
+    }else if(maquina === 'Piedra' && usuario === 'Tijeras'){
+        maquinaGana();
+    }else if(maquina === 'Papel' && usuario === 'Piedra'){
+        maquinaGana();
+    }else if(maquina === 'Piedra' && usuario === 'Papel'){
+        UsuarioGana()
+    }else if(maquina === 'Tijeras' && usuario === 'Papel'){
+        maquinaGana();
+    }else if(maquina === 'Papel' && usuario === 'Tijeras'){
+        UsuarioGana()
     }
 
 }
